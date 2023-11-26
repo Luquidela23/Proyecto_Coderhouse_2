@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>{% block title %}Home{% endblock %}</title>
 </head>
 <body>
-    <h1>Bienvenido al Blog</h1>
-    <!-- Contenido de la página de inicio -->
+    <header>
+        <h1>Bienvenido al Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li><a href="{% url 'lista_articulos' %}">Artículos</a></li>
+                <li><a href="{% url 'registro' %}">Registro</a></li>
+                <li><a href="{% url 'inicio_sesion' %}">Inicio de Sesión</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 </body>
 </html>

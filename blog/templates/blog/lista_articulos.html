@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Artículos</title>
-</head>
-<body>
-    <h1>Lista de Artículos</h1>
-    <!-- Mostrar la lista de artículos aquí -->
-</body>
-</html>
+
+{% extends 'home.html' %}
+
+{% block title %}Lista de Artículos{% endblock %}
+
+{% block content %}
+    <h2>Lista de Artículos</h2>
+    {% for articulo in articulos %}
+        <article>
+            <h3><a href="{% url 'detalle_articulo' articulo.id %}">{{ articulo.titulo }}</a></h3>
+            <p>{{ articulo.contenido }}</p>
+            <p>Publicado por: {{ articulo.autor }} el {{ articulo.fecha_publicacion }}</p>
+            <!-- Agrega más detalles según tus necesidades -->
+            <a href="{% url 'editar_articulo' articulo.id %}">Editar</a>
+            <a href="{% url 'eliminar_articulo' articulo.id %}">Eliminar</a>
+        </article>
+    {% endfor %}
+{% endblock %}
