@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Articulo
 from .forms import ArticuloForm
 
-def home(request):
+def home_blog(request):
     return render(request, 'blog/home.html')
 
 def about(request):

@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import home, about, detalle_articulo, crear_articulo, editar_articulo, eliminar_articulo, lista_articulos
+from .views import home_blog, about, detalle_articulo, crear_articulo, editar_articulo, eliminar_articulo, lista_articulos
 
 app_name = 'blog'
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', home_blog, name='home_blog'),
     path('about/', about, name='about'),
     path('pages/<int:articulo_id>/', detalle_articulo, name='detalle_articulo'),
     path('crear_articulo/', crear_articulo, name='crear_articulo'),
