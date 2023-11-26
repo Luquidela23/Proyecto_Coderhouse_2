@@ -14,7 +14,7 @@ def registro(request):
             return redirect('perfil')
     else:
         form = RegistroForm()
-    return render(request, 'perfiles/registro.html', {'form': form})
+    return render(request, 'perfiles/registro.html')
 
 def inicio_sesion(request):
     if request.method == 'POST':

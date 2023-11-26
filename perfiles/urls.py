@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from .views import registro, inicio_sesion, perfil, editar_perfil, cerrar_sesion
 
 urlpatterns = [
     path('registro/', registro, name='registro'),
