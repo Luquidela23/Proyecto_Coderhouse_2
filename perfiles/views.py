@@ -26,6 +26,9 @@ def inicio_sesion(request):
         form = AuthenticationForm()
     return render(request, 'perfiles/inicio_sesion.html', {'form': form})
 
+def home(request):
+    return render(request, 'blog/home.html')
+
 @login_required
 def perfil(request):
     return render(request, 'perfiles/perfil.html')
